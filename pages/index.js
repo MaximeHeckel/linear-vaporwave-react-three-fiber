@@ -8,7 +8,7 @@ import {
 import { PerspectiveCamera, OrbitControls } from "@react-three/drei";
 import Head from "next/head";
 import React from "react";
-import { TextureLoader } from "three/src/loaders/TextureLoader";
+import { TextureLoader } from "three";
 import {
   EffectComposer,
   GammaCorrectionShader,
@@ -99,7 +99,7 @@ const Effects = () => {
 
   useFrame(() => {
     if (rgbShiftRef.current) {
-      rgbShiftRef.current.uniforms["amount"].value = 0.002;
+      rgbShiftRef.current.uniforms["amount"].value = 0.003;
     }
 
     composerRef.current.render();
@@ -107,12 +107,11 @@ const Effects = () => {
 
   return (
     <effectComposer ref={composerRef} args={[gl]}>
-      <renderPass attachArray="passes" args={[scene, camera]} />
+      <renderPass attachArray="passes" scene={scene} camera={camera} />
       <shaderPass
         ref={rgbShiftRef}
         attachArray="passes"
         args={[RGBShiftShader]}
-        renderToScreen
       />
       <shaderPass attachArray="passes" args={[GammaCorrectionShader]} />
     </effectComposer>
@@ -138,8 +137,8 @@ const Scene = () => {
             zIndex: -1,
             outline: "none",
           }}
+          dpr={Math.min(window.devicePixelRatio, 2)}
           linear
-          dpr={window.devicePixelRatio}
         >
           <React.Suspense fallback={null}>
             <color attach="background" args={["#000000"]} />
