@@ -1,14 +1,11 @@
+import { Canvas, useFrame, useThree, extend } from "@react-three/fiber";
 import {
-  Canvas,
-  useFrame,
-  useThree,
-  useLoader,
-  extend,
-} from "@react-three/fiber";
-import { PerspectiveCamera, OrbitControls } from "@react-three/drei";
+  PerspectiveCamera,
+  OrbitControls,
+  useTexture,
+} from "@react-three/drei";
 import Head from "next/head";
 import React from "react";
-import { TextureLoader } from "three";
 import {
   EffectComposer,
   GammaCorrectionShader,
@@ -36,10 +33,11 @@ extend({ EffectComposer, RenderPass, ShaderPass, UnrealBloomPass });
 const Terrain = React.forwardRef((props, ref) => {
   const { z } = props;
 
-  const [gridTexture, heightTexture, metalnessTexture] = useLoader(
-    TextureLoader,
-    ["grid-6.png", "displacement-7.png", "metalness-2.png"]
-  );
+  const [gridTexture, heightTexture, metalnessTexture] = useTexture([
+    "grid-6.png",
+    "displacement-7.png",
+    "metalness-2.png",
+  ]);
 
   return (
     <mesh ref={ref} position={[0, 0, z]} rotation={[-Math.PI * 0.5, 0, 0]}>
