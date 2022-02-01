@@ -6,11 +6,18 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.label-container {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
 }
 
-* {
-  box-sizing: border-box;
+.label {
+  color: white;
+  margin-bottom: 8px;
+}
+
+a,
+a:visited {
+  color: inherit;
 }

@@ -190,7 +190,7 @@
   resolved "https://registry.yarnpkg.com/@react-spring/types/-/types-9.4.2.tgz#f0518f6d23a0b0f699a71976483323ac84bc4ace"
   integrity sha512-GGiIscTM+CEUNV52anj3g5FqAZKL2+eRKtvBOAlC99qGBbvJ3qTLImrUR/I3lXY7PRuLgzI6kh34quA1oUxWYQ==
 
-"@react-three/drei@^8.8.0":
+"@react-three/drei@8.8.0":
   version "8.8.0"
   resolved "https://registry.yarnpkg.com/@react-three/drei/-/drei-8.8.0.tgz#005f8f274eecd424eb866403bbe32af1da961ae6"
   integrity sha512-2+1LXDqimAgQbC02I6PVXN9QMpQCKMY/sYA14V8Or/2USiIZla00elG1qI63IrEMxIngjiObLAur7S2YIkaPxg==
@@ -212,7 +212,7 @@
     utility-types "^3.10.0"
     zustand "^3.5.13"
 
-"@react-three/fiber@^7.0.26":
+"@react-three/fiber@7.0.26":
   version "7.0.26"
   resolved "https://registry.yarnpkg.com/@react-three/fiber/-/fiber-7.0.26.tgz#36ec19fa7bff00738a7dd368d37d81fed912dd52"
   integrity sha512-46NBais4fQIGcMGLBbOf84lp8y/cg73jOEVmAQQJqWX6iOVeNg29jYd15LBuCW2qPD1qDRU0rOfLbMDgwr/vxQ==
@@ -238,7 +238,7 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
-"@types/three@^0.137.0":
+"@types/three@0.137.0":
   version "0.137.0"
   resolved "https://registry.yarnpkg.com/@types/three/-/three-0.137.0.tgz#6047e0658262b4de7c464a40288f9071ddd9a6d5"
   integrity sha512-Xc5EAlfYmgrCLI/VlSVqiRJAtzhWF0Rw2jSq48nqJy+Hcb5sfDOXyfZn1+RNcHyi9l8CeCAXCZygO8IyeOJVEA==
@@ -1496,11 +1496,6 @@ postcss@8.4.5:
     picocolors "^1.0.0"
     source-map-js "^1.0.1"
 
-postprocessing@^6.23.5:
-  version "6.23.5"
-  resolved "https://registry.yarnpkg.com/postprocessing/-/postprocessing-6.23.5.tgz#b4e68d9f5be7dfa2fa886ce8a4d99d7eab56317a"
-  integrity sha512-WpzKg6nUbRWVOISCfup/1rzJjYtxj8kCow/YOkzYq+/879mISewWZAUXwfXaRO8Mu3yM6dH+WAWzxWROjrxM7A==
-
 potpack@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/potpack/-/potpack-1.0.2.tgz#23b99e64eb74f5741ffe7656b5b5c4ddce8dfc14"
@@ -1794,7 +1789,7 @@ three-mesh-bvh@^0.5.4:
   resolved "https://registry.yarnpkg.com/three-mesh-bvh/-/three-mesh-bvh-0.5.4.tgz#f4c8d751f420c60c35f880393bb00553ce1b298c"
   integrity sha512-Hq3zpjqBxx2sp/K2Fw7cZ1yEoIVbMc4hOv3VRtmCjHapDKkZpDh8w3OcktbCwn+vBNPt9Ii8D0nDTeqt+73Dwg==
 
-three-stdlib@^2.8.2, three-stdlib@^2.8.4:
+three-stdlib@2.8.4, three-stdlib@^2.8.2:
   version "2.8.4"
   resolved "https://registry.yarnpkg.com/three-stdlib/-/three-stdlib-2.8.4.tgz#066a26b18d9f1db0dccd915d9164fd3f8b50e1bb"
   integrity sha512-TsDidKnITAhU38b6KfaLBNfcyTChANJW9mNw2Ds+Pz8BWSkDPoLQKZVJdcMsnP4+QXjRB3y95cbNYXB/3KF4uw==
@@ -1811,7 +1806,7 @@ three-stdlib@^2.8.2, three-stdlib@^2.8.4:
     potpack "^1.0.1"
     zstddec "^0.0.2"
 
-three@^0.137.5:
+three@0.137.5:
   version "0.137.5"
   resolved "https://registry.yarnpkg.com/three/-/three-0.137.5.tgz#a1e34bedd0412f2d8797112973dfadac78022ce6"
   integrity sha512-rTyr+HDFxjnN8+N/guZjDgfVxgHptZQpf6xfL/Mo7a5JYIFwK6tAq3bzxYYB4Ae0RosDZlDuP+X5aXDXz+XnHQ==
