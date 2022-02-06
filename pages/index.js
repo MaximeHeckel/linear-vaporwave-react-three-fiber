@@ -14,6 +14,32 @@ import {
   ShaderPass,
   UnrealBloomPass,
 } from "three-stdlib";
+import { MeshStandardMaterial } from "three";
+import CustomShaderMaterial from "three-custom-shader-material";
+
+const fragmentShader = `
+float aastep(in float threshold, in float value) {
+  float afwidth = length(vec2(dFdx(value), dFdy(value))) * 0.70710678118654757;
+  return 1.0 - smoothstep(threshold-afwidth, threshold+afwidth, value);
+}
+
+void main() {
+  float lw = 1.0;
+  float w;
+
+  float gx = 1.0 + cos(vUv.x * 24.0 * 2.0 * PI - PI);
+  w = fwidth(vUv.x) * lw;
+  gx = aastep(w, gx);
+
+  float gy = 1.0 + cos(vUv.y * 24.0 * 2.0 * PI - PI);
+  w = fwidth(vUv.y) * lw;
+  gy = aastep(w, gy);
+
+  float grid = gx + gy;
+  
+  csm_DiffuseColor = vec4(grid, grid * 0.3, grid * 0.5, 1.0);
+}
+`;
 
 /**
  * Lots of great examples on how to handle effects are available at: https://onion2k.github.io/r3f-by-example
@@ -32,22 +58,24 @@ extend({ EffectComposer, RenderPass, ShaderPass, UnrealBloomPass });
  */
 const Terrain = React.forwardRef((props, ref) => {
   const { z } = props;
+  const materialRef = React.useRef();
 
-  const [gridTexture, heightTexture, metalnessTexture] = useTexture([
-    "grid-6.png",
+  const [heightTexture, metalnessTexture] = useTexture([
     "displacement-7.png",
     "metalness-2.png",
   ]);
 
   return (
     <mesh ref={ref} position={[0, 0, z]} rotation={[-Math.PI * 0.5, 0, 0]}>
-      <planeGeometry args={[1, 2, 24, 24]} />
-      <meshStandardMaterial
-        map={gridTexture}
+      <planeBufferGeometry arrach="geometry" args={[1, 2, 24, 24]} />
+      <CustomShaderMaterial
+        ref={materialRef}
+        baseMaterial={MeshStandardMaterial}
+        fragmentShader={fragmentShader}
         displacementMap={heightTexture}
         displacementScale={0.4}
         metalnessMap={metalnessTexture}
-        metalness={0.95}
+        metalness={0.9}
         roughness={0.5}
       />
     </mesh>
@@ -115,7 +143,7 @@ const Effects = () => {
       <shaderPass attachArray="passes" args={[GammaCorrectionShader]} />
       <unrealBloomPass
         attachArray="passes"
-        args={[size.width / size.height, 0.5, 0.8, 0]}
+        args={[size.width / size.height, 0.2, 0.8, 0]}
       />
     </effectComposer>
   );
@@ -197,6 +225,7 @@ const Scene = () => {
           }}
           dpr={Math.min(window.devicePixelRatio, 2)}
           linear
+          antialias
         >
           <React.Suspense fallback={null}>
             <color attach="background" args={["#000000"]} />
