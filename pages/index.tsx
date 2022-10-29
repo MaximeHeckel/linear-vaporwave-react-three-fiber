@@ -1,3 +1,4 @@
+import type { NextPage } from 'next'
 import { Canvas, useFrame, useThree, extend } from "@react-three/fiber";
 import {
   PerspectiveCamera,
@@ -248,7 +249,7 @@ const Scene = () => {
   );
 };
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <div>
       <Head>
@@ -285,3 +286,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home
