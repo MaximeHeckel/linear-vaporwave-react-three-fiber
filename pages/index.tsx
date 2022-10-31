@@ -216,14 +216,6 @@ const Scene = () => {
     <>
       {!mounted ? null : (
         <Canvas
-          style={{
-            position: "absolute",
-            display: "block",
-            top: 0,
-            left: 0,
-            zIndex: -1,
-            outline: "none",
-          }}
           dpr={Math.min(window.devicePixelRatio, 2)}
           linear
           antialias
@@ -251,39 +243,9 @@ const Scene = () => {
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Head>
-        <title>Linear - React-Three-Fiber</title>
-        <meta
-          name="description"
-          content="A reversed-engineer versioned of the WebGL animation from the Linear 2021 release page. Recreated by @MaximeHeckel"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <div className="label-container">
-          <p className="label">
-            ⚡️ Originally inspired by the{" "}
-            <a href="https://linear.app/releases/2021-06">
-              2021 Linear release page
-            </a>
-          </p>
-          <p className="label">
-            ✨ Reverse-engineered and recreated by{" "}
-            <a href="https://twitter.com/MaximeHeckel">@MaximeHeckel</a> with
-            React-Three-Fiber
-          </p>
-          <p className="label">
-            👉 How I built this?{" "}
-            <a href="https://blog.maximeheckel.com/posts/vaporwave-3d-scene-with-threejs/">
-              Building a Vaporwave scene with Three.js
-            </a>{" "}
-            (Three.js only)
-          </p>
-        </div>
-        <Scene />
-      </main>
-    </div>
+    <>
+      <Scene />
+    </>
   );
 }
 
