@@ -10,8 +10,6 @@ import { Scene } from '@/ui/Scene';
 
 export default function Page() {
   return (
-    <>
-      <Scene />
-    </>
+    <Scene />
   );
 }
