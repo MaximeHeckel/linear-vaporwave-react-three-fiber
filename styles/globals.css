@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.label-container {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+}
+
+.label {
+  color: white;
+  margin-bottom: 8px;
+}
+
+canvas {
+  width:100%;
+  max-width:100%;
+  height:100%;
+}
+
+a,
+a:visited {
+  color: inherit;
+}
