@@ -1,11 +1,17 @@
-import { demos } from '@/lib/demos';
-import Link from 'next/link';
+import React from "react";
+import { Scene } from '@/ui/Scene';
+
+/**
+ * Lots of great examples on how to handle effects are available at: https://onion2k.github.io/r3f-by-example
+ */
+
+// Read more about extend at https://docs.pmnd.rs/react-three-fiber/api/objects#using-3rd-party-objects-declaratively
+
 
 export default function Page() {
   return (
-    <div className="space-y-6">
-      <div className="space-y-8 text-white">
-      </div>
-    </div>
+    <>
+      <Scene />
+    </>
   );
 }
