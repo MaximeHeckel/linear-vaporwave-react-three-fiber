@@ -167,6 +167,17 @@ export const Scene = () => {
     <>
       {!mounted ? null : (
         <Canvas
+          id="vaporwave"
+          style={{
+            height: "100vh",
+            width: "100vw",
+            flex: 1,
+            flexGrow: 1,
+            flexShrink: 1,
+            flexBasis: "0%",
+            display: "inline-block",
+            flexDirection: "column"
+          }}
           dpr={Math.min(window.devicePixelRatio, 2)}
           linear
           antialias

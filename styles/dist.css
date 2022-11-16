@@ -2041,6 +2041,12 @@ html {
   background-color: #0f0b25;
 }
 
+.mockup-phone .display {
+  overflow: hidden;
+  border-radius: 40px;
+  margin-top: -25px;
+}
+
 @keyframes progress-loading {
   50% {
     left: 107%;
@@ -2132,6 +2138,14 @@ html {
   border-top-right-radius: 0;
   border-bottom-left-radius: var(--rounded-btn, 0.5rem);
   border-bottom-right-radius: var(--rounded-btn, 0.5rem);
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
 }
 
 .grid {
@@ -2248,12 +2262,6 @@ body {
 .label {
   color: white;
   margin-bottom: 8px;
-}
-
-canvas {
-  width:100%;
-  max-width:100%;
-  height:100%;
 }
 
 a,
